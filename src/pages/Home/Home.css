@@ -1,0 +1,410 @@
+.home {
+  min-height: 100vh;
+}
+
+/* Message de bienvenue */
+.welcome-message {
+  text-align: center;
+  background-color: #eee;
+  font-size: 24px;
+  color: #F39200;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+.welcome-message:before,
+.welcome-message:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 40px;
+  background: linear-gradient(90deg, #F39200, #009649);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.welcome-message:before {
+  left: calc(50% - 200px);
+}
+
+.welcome-message:after {
+  right: calc(50% - 200px);
+}
+
+/* Slides */
+.slides-container {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.slide-text {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px #FFB347;
+  animation: slideText 1.5s ease-in-out;
+}
+
+.slide-desc {
+  font-size: 25px;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.932);
+}
+
+.slide-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #F39200 0%, #FFB347 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(243, 146, 0, 0.4);
+}
+
+.slide-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgb(255, 255, 255);
+}
+
+@keyframes slideText {
+  0% { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Boutons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #1F538A 0%, #5A8FCF 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.849);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px #F39200;
+}
+
+/* Carrousel partenaires */
+.partners-section {
+  background-color: #eee;
+  padding: 50px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+.section-title {
+  text-align: center;
+  color: #135091;
+  font-size: 28px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #135091, #03c25f);
+  border-radius: 15px;
+}
+
+.partners-carousel {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: 100px;
+}
+
+.partners-track {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  align-items: center;
+  height: 100%;
+  animation: scroll 25s linear infinite;
+}
+
+.partner-logo {
+  margin: 0 60px;
+  height: 100px;
+  min-width: 150px;
+  background-color: rgba(0, 0, 0, 0.486);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.514);
+  transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px #135091;
+}
+
+.partner-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Section engagement */
+.engagement {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #009648 0%, #00C853 100%);
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.engagement:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/bato.jpg') center/cover;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.engagement-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.engagement h2 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  position: relative;
+  display: inline-block;
+}
+
+.engagement h2:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgb(255, 255, 255);
+  border-radius: 3px;
+}
+
+.engagement p {
+  font-size: 19px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.engagement-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.stat-item {
+  text-align: center;
+  margin: 15px;
+  min-width: 150px;
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #F39200;
+}
+
+.stat-label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .welcome-message {
+    font-size: 18px;
+    padding: 15px;
+  }
+  
+  .welcome-message:before,
+  .welcome-message:after {
+    width: 20px;
+  }
+  
+  .welcome-message:before {
+    left: calc(50% - 150px);
+  }
+  
+  .welcome-message:after {
+    right: calc(50% - 150px);
+  }
+  
+  .slides-container {
+    height: 400px;
+  }
+  
+  .slide-text {
+    font-size: 28px;
+  }
+  
+  .slide-desc {
+    font-size: 16px;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .engagement-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .partner-logo {
+    margin: 0 30px;
+    height: 80px;
+    min-width: 120px;
+  }
+  
+  .engagement h2 {
+    font-size: 28px;
+  }
+  
+  .engagement p {
+    font-size: 16px;
+  }
+  
+  .stat-number {
+    font-size: 36px;
+  }
+  
+  .stat-label {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slides-container {
+    height: 300px;
+  }
+  
+  .slide-text {
+    font-size: 22px;
+  }
+  
+  .slide-desc {
+    font-size: 14px;
+  }
+  
+  .slide-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .button {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+  
+  .partner-logo {
+    margin: 0 15px;
+    height: 60px;
+    min-width: 100px;
+  }
+}
