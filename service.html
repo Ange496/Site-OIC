@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - Office Ivoirien des Chargeurs (OIC)</title>
+    <meta name="description" content="Découvrez nos services complets pour les chargeurs ivoiriens : BSC en ligne, DUT, gestion logistique et bien plus">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" href="images/logo.png">
+    <style>
+        :root {
+            --primary-color: #1F538A;
+            --secondary-color: #F39200;
+            --accent-color: #FFB347;
+            --dark-blue: #0A2E57;
+            --light-gray: #f5f7fa;
+            --white: #ffffff;
+            --text-color: #333333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --gradient-blue: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-blue) 100%);
+            --gradient-orange: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+        }
+
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1F538A 0%, #5A8FCF 100%);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 15px;
+}
+
+/* Navigation Desktop */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 10px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 8px 10px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #F39200;
+}
+
+/* Menu déroulant */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    z-index: 1002;
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+    overflow: hidden;
+}
+
+.dropdown-menu a {
+    color: #1F538A;
+    padding: 12px 16px;
+    display: block;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease;
+     z-index: 1002;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+    color: #F39200;
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+        /* Burger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 1001;
+            background: transparent;
+            border: none;
+            padding: 0;
+            position: relative;
+        }
+
+        .menu-toggle span {
+            background-color: var(--secondary-color);
+            display: block;
+            height: 3px;
+            width: 28px;
+            border-radius: 3px;
+            transition: var(--transition);
+            margin: 4px 0;
+            transform-origin: center;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+            max-width: 300px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .search-bar input {
+            padding: 12px 20px;
+            width: 100%;
+            border: none;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            font-size: 16px;
+            padding-right: 50px;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--gradient-orange);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-bar button:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            height: 80vh;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+
+        .hero-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-attachment: fixed;
+        }
+
+        .hero-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(31, 83, 138, 0.85), rgba(31, 83, 138, 0.5));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+            font-weight: 700;
+            animation: fadeInUp 1s ease both;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s both;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--gradient-orange);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(243, 146, 0, 0.3);
+            animation: fadeInUp 1s ease 0.4s both;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(243, 146, 0, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-orange);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .section-title p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            transform: translateY(0);
+            z-index: 1;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-blue);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card:hover:before {
+            opacity: 0.05;
+        }
+
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-content h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-content h3:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-orange);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+
+
+        
+        .service-content p {
+            margin-bottom: 25px;
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .service-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            background: var(--gradient-blue);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(31, 83, 138, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-orange);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .service-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(31, 83, 138, 0.4);
+        }
+
+        .service-btn:hover:after {
+            opacity: 1;
+        }
+
+        .service-btn i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .service-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(243, 146, 0, 0.1);
+            border-radius: 50%;
+            filter: blur(30px);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+
+.modal-content {
+    background: #fff;
+    width: 95%;
+    max-width: 900px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+
+.modal-header {
+    position: relative;
+    padding: 25px 30px;
+    background: var(--gradient-blue);
+    color: #fff;
+}
+
+.modal-header h3 {
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.modal-body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.modal-img {
+    width: 100%;
+    max-height: 600px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-img img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+}
+
+.modal-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.modal-features {
+    background: #f8f9fb;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--secondary-color);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+}
+
+.modal-features h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.modal-features ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.modal-features li {
+    position: relative;
+    padding-left: 30px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.modal-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.modal-cta {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--gradient-orange);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 25px;
+    box-shadow: 0 12px 24px rgba(243, 146, 0, 0.4);
+}
+
+.modal-cta:hover {
+    background: linear-gradient(to right, #ff9a00, #ff6700);
+}
+
+
+        footer {
+    background: linear-gradient(135deg, #1F538A 0%, #0A2E57 100%);
+    color: white;
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #F39200;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-column ul li a:hover {
+    color: #F39200;
+    transform: translateX(5px);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #F39200;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+
+        .modal-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(243, 146, 0, 0.4);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: var(--gradient-orange);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(243, 146, 0, 0.4);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(243, 146, 0, 0.5);
+        }
+
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-banner {
+                height: 70vh;
+                min-height: 500px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 85%;
+                max-width: 350px;
+                height: 100vh;
+                background: var(--gradient-blue);
+                padding: 120px 30px 30px;
+                transition: var(--transition);
+                z-index: 1000;
+                box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            nav ul li a {
+                font-size: 1.1rem;
+                padding: 12px 20px;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                display: none;
+                margin-top: 10px;
+                margin-left: 15px;
+                animation: none;
+                background-color: rgba(255,255,255,0.1);
+            }
+            
+            .dropdown-menu a {
+                color: white;
+                padding: 10px 25px;
+                border-bottom-color: rgba(255,255,255,0.1);
+            }
+            
+            .dropdown-menu a:hover {
+                background-color: rgba(255,255,255,0.2);
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+            
+            .hero-banner {
+                height: 60vh;
+                min-height: 400px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+            
+            .modal-header h3 {
+                font-size: 1.8rem;
+            }
+            
+            .modal-img {
+                height: 650px;
+            }
+            
+            .modal-features ul {
+                grid-template-columns: 1fr;
+            }
+            
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                bottom: 30px;
+                right: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-cta {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 1.1rem;
+            }
+            
+            .service-content {
+                padding: 25px;
+            }
+            
+            .service-content h3 {
+                font-size: 1.4rem;
+            }
+            
+            .modal-header {
+                padding: 25px;
+            }
+            
+            .modal-header h3 {
+                font-size: 1.6rem;
+                padding-right: 30px;
+            }
+            
+            .modal-body {
+                padding: 25px;
+            }
+            
+            .modal-img {
+                height: 650px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-top">
+                 <div class="logo">
+  <a href="accueil.html">
+    <img src="images/oic.jpg" alt="Logo OIC" />
+  </a>
+</div>
+
+                <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="accueil.html">Accueil</a></li>
+                        <li><a href="a propos.html">À propos</a></li>
+                       <li class="dropdown">
+            <a href="service.html">Services <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+              <a href="#">BORDEREAU DE SUIVI DES CARGAISONS (BSC EN LIGNE)</a>
+              <a href="#">DOCUMENT UNIQUE DE TRANSPORT (DUT)</a>
+              <a href="#">PARKING DE STATIONNEMENT</a>
+              <a href="#">SUIVI DE TAFIC</a>
+              <a href="#">L’ENTREPÔT REEL SOUS DOUANE</a>
+              <a href="#">GEOLOCALISATION</a>
+              <a href="#">SEMINAIRE</a>
+            </div>
+          </li>
+                        <li><a href="actu.html">Actualité / Événement</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher sur le portail..." aria-label="Rechercher">
+                <button type="submit" title="Rechercher">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+            <div class="hero-image" style="background-image: url('images/serv.jpg')" aria-label="Bannière Nos Services">
+                <div class="hero-content">
+                    <h1 class="animate__animated animate__fadeInUp">NOS SERVICES</h1>
+                    <p class="animate__animated animate__fadeInUp">Découvrez l'ensemble des services professionnels que nous mettons à votre disposition</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="floating-elements">
+                <div class="floating-element" style="width: 300px; height: 300px; top: 10%; left: 5%;"></div>
+                <div class="floating-element" style="width: 200px; height: 200px; top: 60%; left: 80%;"></div>
+                <div class="floating-element" style="width: 250px; height: 250px; top: 30%; left: 70%;"></div>
+            </div>
+            
+            <div class="section-title">
+                <h2>Nos Solutions Complètes</h2>
+                <p>Des services innovants et sur mesure pour répondre à tous vos besoins logistiques</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/bsc.jpg" alt="BSC en ligne" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>BSC en ligne</h3>
+                        <p>Gérez vos bordereaux de suivi de cargaisons en toute simplicité grâce à notre plateforme digitale sécurisée.</p>
+                        <button class="service-btn" onclick="openModal(0)">En savoir plus <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/du.jpg" alt="DUT" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Document Unique de Transport</h3>
+                        <p>Simplifiez vos formalités de transport routier avec notre solution de DUT dématérialisé.</p>
+                        <button class="service-btn" onclick="openModal(1)">En savoir plus <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/park.jpg" alt="Parking" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Parking Sécurisé</h3>
+                        <p>Des espaces de stationnement surveillés pour vos véhicules et conteneurs près du port.</p>
+                        <button class="service-btn" onclick="openModal(2)">En savoir plus <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/dut.jpg" alt="Suivi de trafic" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Suivi de Trafic</h3>
+                        <p>Surveillance et analyse en temps réel des flux de marchandises au port d'Abidjan.</p>
+                        <button class="service-btn" onclick="openModal(3)">En savoir plus <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/doua.jpg" alt="Entrepôt sous douane" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Entrepôt Sous Douane</h3>
+                        <p>Stockage sécurisé de vos marchandises en zone douanière avec gestion informatisée.</p>
+                        <button class="service-btn" onclick="openModal(4)">En savoir plus <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/geolo.jpg" alt="Géolocalisation" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Géolocalisation</h3>
+                        <p>Suivi en temps réel de vos conteneurs et véhicules sur toute la Côte d'Ivoire.</p>
+                        <button class="service-btn" onclick="openModal(5)">En savoir plus <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/semi.jpg" alt="Séminaires" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Séminaires Professionnels</h3>
+                        <p>Formations et ateliers sur les réglementations et bonnes pratiques du transport.</p>
+                        <button class="service-btn" onclick="openModal(6)">En savoir plus <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Structure -->
+        <div class="modal" id="serviceModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Titre du Service</h3>
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-img">
+                        <img id="modalImage" src="" alt="Image du service" loading="lazy">
+                    </div>
+                    <div class="modal-text">
+                        <p id="modalDescription">Description détaillée du service...</p>
+                        
+                        <div class="modal-features">
+                            <h4>Fonctionnalités clés</h4>
+                            <ul id="modalFeatures">
+                                <!-- Features will be added by JS -->
+                            </ul>
+                        </div>
+                        
+                        <p id="modalAdditional">Informations supplémentaires...</p>
+                        
+                        <button class="modal-cta" onclick="closeModal()">
+                            Fermer <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+<footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>À PROPOS</h3>
+                <p>L'Office Ivoirien des Chargeurs est l'institution de référence pour les professionnels du transport et de la logistique en Côte d'Ivoire.</p>
+                <div class="footer-social">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+              <div class="footer-column">
+                <h3>LIENS RAPIDES</h3>
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="a propos.html">À propos</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="actu.html">Actualités</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>SERVICES</h3>
+                <ul>
+                   <li><a href="#">BORDEREAU DE SUIVI DES CARGAISONS (BSC EN LIGNE)</a></li>
+             <li><a href="#">DOCUMENT UNIQUE DE TRANSPORT (DUT)</a></li>
+              <li><a href="#">PARKING DE STATIONNEMENT</a></li>
+              <li><a href="#">SUIVI DE TAFIC</a></li>
+              <li><a href="#">L’ENTREPÔT REEL SOUS DOUANE</a></li>
+              <li><a href="#">GEOLOCALISATION</a></li>
+              <li><a href="#">SEMINAIRE</a></li>
+                </ul>
+            </div>
+            
+            
+            <div class="footer-column">
+                <h3>CONTACT</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Rue Le Havre, Zone portuaire</li>
+                    <li><i class="fas fa-phone"></i> (+225) 27.21.25.12.87</li>
+                    <li><i class="fas fa-envelope"></i> ctbsc@oic.ci</li>
+                    <li><i class="fas fa-clock"></i> Lun-Ven: 8h-16h</li>
+                </ul>
+            </div>
+        </div><br>
+        
+        <div class="footer-bottom">
+    <p>&copy; 2025 OIC . Tous droits réservés. <a href="https://justvyou.com/" target="_blank">JUSTVYOU MEDIALAB</a>.</p>
+</div>
+
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        // Données des services
+        const services = [
+            {
+                title: "BSC en ligne",
+                image: "images/bsc.jpg",
+                description: "Notre plateforme de Bordereau de Suivi de Cargaison (BSC) en ligne révolutionne la gestion de vos expéditions maritimes. Simplifiez vos démarches administratives avec une solution 100% digitale disponible 24h/24 et 7j/7, accessible depuis n'importe quel appareil connecté.",
+                features: [
+                    "Génération instantanée des BSC avec pré-remplissage intelligent",
+                    "Historique complet et archivage numérique de toutes vos expéditions",
+                    "Paiement sécurisé en ligne avec multiples options (mobile money, carte, virement)",
+                    "Interface conviviale et intuitive en français et anglais",
+                    "Notifications en temps réel par email et SMS à chaque étape",
+                    "Conformité totale aux réglementations douanières en vigueur",
+                    "Intégration API avec les systèmes portuaires et douaniers",
+                    "Support technique dédié 7j/7"
+                ],
+                additional: "Notre système est intégré avec les principales plateformes portuaires pour un suivi optimal de vos marchandises. Réduisez vos temps de traitement de 70% avec notre solution automatisée qui élimine les erreurs humaines et les retards administratifs."
+            },
+            {
+                title: "Document Unique de Transport (DUT)",
+                image: "images/du.jpg",
+                description: "Le DUT dématérialisé est la solution innovante pour gérer vos transports routiers de marchandises en Côte d'Ivoire et dans la sous-région. Un gain de temps considérable pour les professionnels du secteur avec une traçabilité renforcée.",
+                features: [
+                    "Création et gestion des DUT en ligne en moins de 5 minutes",
+                    "Archivage numérique des documents pendant 10 ans",
+                    "Validation électronique instantanée par les autorités compétentes",
+                    "Géolocalisation en temps réel des transports",
+                    "Alertes proactives en cas d'anomalie ou de retard",
+                    "Intégration transparente avec les systèmes douaniers",
+                    "Génération automatique des statistiques et rapports",
+                    "Module de gestion des litiges intégré"
+                ],
+                additional: "Notre solution réduit les fraudes de plus de 90% et améliore considérablement la traçabilité des marchandises transportées par route. Conforme aux dernières directives de l'UEMOA et compatible avec les systèmes des pays voisins pour le transit international."
+            },
+            {
+                title: "Parking Sécurisé",
+                image: "images/park.jpg",
+                description: "Nos parkings haute sécurité près du port d'Abidjan offrent des solutions de stationnement adaptées aux professionnels du transport avec des services à valeur ajoutée pour une gestion optimale de votre flotte.",
+                features: [
+                    "Surveillance 24h/24 par vidéosurveillance HD et gardes armés",
+                    "Espace couvert et découvert avec éclairage LED",
+                    "Capacité d'accueil de 200 conteneurs et 150 véhicules",
+                    "Système de réservation en ligne avec planning intelligent",
+                    "Services annexes premium (lavage, réparation, contrôle technique)",
+                    "Accès biométrique et contrôle par badge RFID",
+                    "Zone réfrigérée pour les produits sensibles",
+                    "Assurance tous risques incluse"
+                ],
+                additional: "Localisation stratégique à moins de 2km du port, avec accès direct aux principales voies de circulation. Tarifs compétitifs pour les abonnements mensuels avec des réductions pour les partenaires privilégiés. Système de gestion en temps réel de l'occupation disponible sur mobile."
+            },
+            {
+                title: "Suivi de Trafic",
+                image: "images/dut.jpg",
+                description: "Notre service avancé de monitoring des flux portuaires vous donne une visibilité en temps réel et prédictive sur les mouvements de marchandises, permettant une optimisation sans précédent de votre chaîne logistique.",
+                features: [
+                    "Tableau de bord analytique personnalisable avec indicateurs clés",
+                    "Alertes intelligentes sur les retards et congestions",
+                    "Statistiques historiques et analyse comparative",
+                    "Prévisions de trafic basées sur l'IA et le machine learning",
+                    "Intégration complète avec les systèmes portuaires (PCS, CTMS)",
+                    "Rapports automatisés et exportables en multiples formats",
+                    "Module de simulation pour planifier vos opérations",
+                    "Accès multi-utilisateurs avec droits différenciés"
+                ],
+                additional: "Bénéficiez d'un avantage concurrentiel majeur en anticipant les congestions et en optimisant vos plannings de livraison. Notre solution réduit les temps d'attente de 40% en moyenne et diminue significativement vos coûts de stockage."
+            },
+            {
+                title: "Entrepôt Sous Douane",
+                image: "images/doua.jpg",
+                description: "Nos entrepôts sous douane de dernière génération offrent une solution de stockage sécurisée et fiscalement avantageuse pour vos marchandises en transit, avec des services logistiques intégrés.",
+                features: [
+                    "Superficie de 5000 m² couverts avec extension possible",
+                    "Système de gestion informatisé (WMS) avec traçabilité RFID",
+                    "Contrôle des températures et hygrométrie pour produits sensibles",
+                    "Manutention professionnelle avec équipements modernes",
+                    "Assurance tous risques des marchandises stockées",
+                    "Accès 24h/7j avec système de rendez-vous en ligne",
+                    "Zone de valeur ajoutée (étiquetage, reconditionnement)",
+                    "Service douanier intégré pour les formalités"
+                ],
+                additional: "Notre plateforme logistique est agréée par les douanes ivoiriennes et permet de différer le paiement des droits jusqu'à la sortie des marchandises. Bénéficiez de nos partenariats avec les transitaires pour une gestion fluide de vos stocks sous douane."
+            },
+            {
+                title: "Géolocalisation",
+                image: "images/geolo.jpg",
+                description: "Notre système de géolocalisation de pointe vous permet de suivre en temps réel vos conteneurs, véhicules et marchandises sur tout le territoire ivoirien et en Afrique de l'Ouest, avec une précision inégalée.",
+                features: [
+                    "Suivi en temps réel sur carte interactive 3D",
+                    "Historique des trajets avec replay des déplacements",
+                    "Alertes de sécurité personnalisables (déviations, retards, arrêts non planifiés)",
+                    "Geofencing avec création de périmètres virtuels",
+                    "Rapports d'activité automatisés avec analyse des performances",
+                    "Intégration API avec vos systèmes existants (ERP, TMS)",
+                    "Application mobile dédiée iOS/Android",
+                    "Balises ultra-résistantes avec autonomie de 2 ans"
+                ],
+                additional: "Solution compatible avec tous types de smartphones et tablettes. Données sécurisées et hébergées localement en Côte d'Ivoire avec sauvegarde quotidienne. Certification ISO 27001 pour la sécurité des données. Service disponible en forfait illimité ou à la demande."
+            },
+            {
+                title: "Séminaires Professionnels",
+                image: "images/semi.jpg",
+                description: "Nos formations professionnelles certifiantes vous permettent de maîtriser les dernières réglementations, technologies et bonnes pratiques du secteur logistique et du transport en Afrique de l'Ouest.",
+                features: [
+                    "Formations certifiantes reconnues par l'État et les organisations professionnelles",
+                    "Intervenants experts du secteur avec expérience terrain",
+                    "Cas pratiques, ateliers et simulations réalistes",
+                    "Programmes sur mesure pour entreprises avec audit préalable",
+                    "Formations en présentiel, distanciel et blended learning",
+                    "Eligibles au financement de la formation professionnelle",
+                    "Plateforme e-learning avec accès illimité aux ressources",
+                    "Suivi post-formation et certification des compétences"
+                ],
+                additional: "Nous organisons également des conférences sectorielles annuelles et des rencontres professionnelles exclusives pour favoriser les échanges entre acteurs majeurs du transport et de la logistique en Afrique. Accès à notre réseau de plus de 500 professionnels du secteur."
+            }
+        ];
+
+        // Fonctions pour gérer la modal
+        function openModal(serviceIndex) {
+            const service = services[serviceIndex];
+            const modal = document.getElementById('serviceModal');
+            
+            document.getElementById('modalTitle').textContent = service.title;
+            document.getElementById('modalImage').src = service.image;
+            document.getElementById('modalImage').alt = service.title;
+            document.getElementById('modalDescription').textContent = service.description;
+            document.getElementById('modalAdditional').textContent = service.additional;
+            
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = '';
+            
+            service.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Animation d'entrée
+            setTimeout(() => {
+                document.querySelector('.modal-content').classList.add('animate__animated', 'animate__fadeInUp');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('serviceModal');
+            document.querySelector('.modal-content').classList.remove('animate__animated', 'animate__fadeInUp');
+            document.querySelector('.modal-content').classList.add('animate__animated', 'animate__fadeOutDown');
+            
+            setTimeout(() => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                document.querySelector('.modal-content').classList.remove('animate__animated', 'animate__fadeOutDown');
+            }, 200);
+        }
+
+        // Fermer la modal en cliquant à l'extérieur
+        window.onclick = function(event) {
+            const modal = document.getElementById('serviceModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Fermer avec la touche ESC
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('serviceModal');
+            if (event.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Menu Burger
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Fermer le menu après clic sur un lien
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Gestion des dropdown sur mobile
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll for back to top
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+  
+                // Vérifier si la carte est dans la fenêtre visible
+                if (cardBottom >= windowTop && cardTop <= windowBottom) {
+                    card.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+        
+        // Délai pour permettre le chargement des images avant l'animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                window.addEventListener('scroll', animateOnScroll);
+                animateOnScroll(); // Exécuter une première fois au chargement
+            }, 200);
+        });
+
+    </script>
+</body>
+</html>
